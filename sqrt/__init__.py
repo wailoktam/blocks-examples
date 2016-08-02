@@ -51,10 +51,10 @@ def main(save_to, num_batches):
         extensions=[
             Timing(),
             FinishAfter(after_n_batches=num_batches),
-            DataStreamMonitoring(
-                [cost], get_data_stream(range(100, 200)),
-                prefix="test"),
-            TrainingDataMonitoring([cost], after_epoch=True),
+#            DataStreamMonitoring(
+#                [cost], get_data_stream(range(100, 200)),
+#                prefix="test"),
+#            TrainingDataMonitoring([cost], after_epoch=True),
             Checkpoint(save_to),
             Printing()])
     main_loop.run()
